@@ -3,7 +3,7 @@ CFLAGS= -f elf64
 all: hello
 
 hello: hello.o
-	ld hello.o -o hello
+	ld -z noseparate-code hello.o -o hello
 
 hello.o: hello.asm
 	nasm $(CFLAGS) hello.asm
